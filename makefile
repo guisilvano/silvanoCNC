@@ -1,9 +1,9 @@
-IDIR =../include
+IDIR =./include
 CC=gcc
 CFLAGS=-I$(IDIR)
 
-ODIR=obj
-LDIR =../lib
+ODIR=./src/obj
+LDIR =./lib
 
 LIBS=
 
