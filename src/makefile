@@ -1,4 +1,4 @@
-IDIR =../include
+IDIR =..t diff/include
 CC=gcc
 CFLAGS=-I$(IDIR)
 
