@@ -1,6 +1,7 @@
 *.exe
 *.o
 *~
+*.py
 *.swp
 src/obj/*
 src/silvanoCNC
