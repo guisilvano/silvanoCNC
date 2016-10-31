@@ -1,4 +1,4 @@
-IDIR =..t diff/include
+IDIR =../include
 CC=gcc
 CFLAGS=-I$(IDIR)
 
@@ -17,12 +17,12 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
 $(ODIR)/%.o: %.c $(DEPS)
-		$(CC) -c -o $@ $< $(CFLAGS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 silvanoCNC: $(OBJ)
-		gcc -o $@ $^ $(CFLAGS) $(LIBS)
+	gcc -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 
 clean:
-		rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 
