@@ -34,13 +34,14 @@ void check_instructions(FILE * f, char op[][4], int total){
 	    exit(errno);
 	}
     }
-    if (feof(f)){
-	printf("Valid file format.\n");
-	return;
-    } else {
+    
+    if (!feof(f)){
 	errno = 5;
 	fflush(stdout);
 	perror("\nERROR");
 	exit(errno);
     }
+    
+    printf("Valid file format.\n");
+    return;
 }
