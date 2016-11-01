@@ -4,4 +4,5 @@
 *.py
 *.swp
 src/obj/*
+./silvanoCNC
 src/silvanoCNC
