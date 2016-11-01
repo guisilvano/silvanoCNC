@@ -1,5 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <errno.h>
 #include <string.h>
-#include <stdbool.h>
 
-bool check_instructions(FILE * f, char op[][4], int total);
+extern int errno;
+
+void check_instructions(FILE * f, char op[][4], int total);

@@ -8,7 +8,7 @@ LDIR = ./lib
 
 dummy_build_folder := $(shell mkdir -p $(ODIR))
 
-LIBS = -lm
+LIBS =
 
 _DEPS = gcode.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))

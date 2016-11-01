@@ -12,7 +12,6 @@ char operators[][4] = {
 size_t total_operators = sizeof(operators)/sizeof(operators[0]);
 
 int main(int argc, char *argv[]){
-    bool check;
 
     printf("Silvano's CNC - V. %s\n",VERSION);
 
@@ -26,20 +25,19 @@ int main(int argc, char *argv[]){
 	argv[1]=path;
     }
 
-    printf("Checking file... ");
-
     FILE* f=fopen(argv[1],"r");
 
     if (f == NULL){
-	printf("Unable to read file.");
-	return -1;
+	perror("ERROR");
+	exit(errno);
     }
     
+    printf("Checking file... ");
+
     /*
      * Beta feature: Checks for uninplemented instructions
      */
-    check = check_instructions(f, operators, total_operators);
-    if(check == false) return -2;
+    check_instructions(f, operators, total_operators);
 
     return 0;
 }
