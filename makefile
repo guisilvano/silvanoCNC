@@ -1,9 +1,10 @@
-IDIR = include
+IDIR = ./include
 CC = gcc
 CFLAGS = -I$(IDIR)
 
-ODIR = src/obj/
-LDIR = lib
+SDIR = ./src
+ODIR = ./src/obj
+LDIR = ./lib
 
 dummy_build_folder := $(shell mkdir -p $(ODIR))
 
@@ -16,7 +17,7 @@ _OBJ = main.o gcode.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(ODIR)/%.o: %.c $(DEPS)
+$(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 silvanoCNC: $(OBJ)
