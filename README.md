@@ -6,6 +6,14 @@ Very early code implementation for a DIY CNC machine. This isn't even doing anyt
 
 ``` shell
 ~$ git clone https://wwww.github.com/guisilvano/silvanoCNC
-~$ cd src
 ~$ make
 ```
+
+Or:
+
+``` shell
+~$ git clone https://wwww.github.com/guisilvano/silvanoCNC
+~$ make clean
+```
+
+If you don't need the '.o' files.
