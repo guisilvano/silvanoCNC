@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 
     /* If path is not specified from cmd line */
     /* TODO: use GNU's getopt to parse arguments */
-    if (argc > 1){
+    if (argc > 1) {
 	path_to_file = argv[1];
     } else {
 	char path[128];
@@ -21,9 +21,9 @@ int main(int argc, char **argv)
 	path_to_file = path;
     }
 
-    FILE* f=fopen(path_to_file, "r");
+    FILE * f=fopen(path_to_file, "r");
 
-    if (f == NULL){
+    if (f == NULL) {
 	perror("ERROR");
 	exit(errno);
     }
