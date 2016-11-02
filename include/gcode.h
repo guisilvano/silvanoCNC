@@ -5,4 +5,4 @@
 
 extern int errno;
 
-void check_instructions(FILE * f, char op[][4], int total);
+void check_instructions(FILE * f);

@@ -2,30 +2,26 @@
 
 #define VERSION "0.0.1"
 
-char operators[][4] = {
-    "(",
+int main(int argc, char **argv)
+{
+    char *path_to_file;
     
-    "G00", "G01", "G02", "G03", "G20", "G64", "G90", 
-    
-    "M03", "M05", "M06", "M30"
-};
-size_t total_operators = sizeof(operators)/sizeof(operators[0]);
-
-int main(int argc, char *argv[]){
-
     printf("Silvano's CNC - V. %s\n",VERSION);
 
-    /*
-     * If path is not specified from cmd line
-     */
-    if (argc == 1){
+    /* If path is not specified from cmd line */
+    /* TODO: use GNU's getopt to parse arguments */
+    if (argc > 1){
+	path_to_file = argv[1];
+    } else {
 	char path[128];
+	
 	printf("Path to file: ");
 	scanf("%s",path);
-	argv[1]=path;
+	
+	path_to_file = path;
     }
 
-    FILE* f=fopen(argv[1],"r");
+    FILE* f=fopen(path_to_file, "r");
 
     if (f == NULL){
 	perror("ERROR");
@@ -34,10 +30,8 @@ int main(int argc, char *argv[]){
     
     printf("Checking file... ");
 
-    /*
-     * Beta feature: Checks for uninplemented instructions
-     */
-    check_instructions(f, operators, total_operators);
+    /* Beta feature: Checks for uninplemented instructions */
+    check_instructions(f);
 
     return 0;
 }
