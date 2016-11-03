@@ -6,7 +6,7 @@ SDIR = ./src
 ODIR = ./src/obj
 LDIR = ./lib
 
-dummy_build_folder := $(shell mkdir -p $(ODIR))
+BUILD_ODIR := $(shell mkdir -p $(ODIR))
 
 LIBS =
 

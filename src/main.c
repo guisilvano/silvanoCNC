@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	
 	path_to_file = path;
     }
-
+    
     FILE * f=fopen(path_to_file, "r");
 
     if (f == NULL) {
