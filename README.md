@@ -9,10 +9,9 @@ Very early code implementation for a DIY CNC machine. This isn't even doing anyt
 ~$ make
 ```
 
-Or:
+Then:
 
 ``` shell
-~$ git clone https://wwww.github.com/guisilvano/silvanoCNC
 ~$ make clean
 ```
 
