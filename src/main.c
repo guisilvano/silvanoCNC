@@ -30,8 +30,13 @@ int main(int argc, char **argv)
     
     printf("Checking file... ");
 
-    /* Beta feature: Checks for uninplemented instructions */
+    /* Beta feature: Checks for unimplemented instructions */
     check_instructions(f);
+    
+    printf("Valid file format.\n");
+    printf("Begin.\n");
+
+    begin_print(f);
 
     return 0;
 }

@@ -58,6 +58,44 @@ void check_instructions(FILE * f)
 	exit(errno);
     }
     
-    printf("Valid file format.\n");
+    return;
+}
+
+/*
+ * Print contents of open file
+ */
+void begin_print(FILE * f)
+{
+    char op[16];
+    
+    /* Move header to beginning of file */
+    fseek(f, 0, SEEK_SET);
+
+    while (fscanf(f,"%s",op) == 1) {
+	/* TODO: Checks for comments on file */
+	if (strcmp(op,"(") == 0) {
+	    /* TODO: Is comment */
+	    fscanf(f,"%s%*[^\n]",op);
+	    
+	    printf("COMMENT");
+	} else {
+	    /* Not comment */
+	
+	    /* Identifies operation an calls its respective routine */
+	    for(int i=0;i<total_operators;i++) {
+		if (strcmp(operators[i],op) == 0) {
+		    printf("Calling %s... \n",operators[i]);
+		   
+		    begin_operation(f, op);
+		}	
+	    }
+	}
+    }
+    return;
+}
+
+void begin_operation(FILE * f, char op[]) 
+{
+
     return;
 }
