@@ -62,7 +62,10 @@ void check_instructions(FILE * f)
 }
 
 /*
- * Print contents of open file
+ * Print contents of open file using the CNC machine
+ *
+ * NEVER call it before check_instructions, you 
+ * may or may not encounter mechanichal problems
  */
 void begin_print(FILE * f)
 {
@@ -81,8 +84,8 @@ void begin_print(FILE * f)
 	} else {
 	    /* Not comment */
 	
-	    /* Identifies operation an calls its respective routine */
-	    for(int i=0;i<total_operators;i++) {
+	    /* Identifies operation and calls its respective routine */
+	    for (int i=0;i<total_operators;i++) {
 		if (strcmp(operators[i],op) == 0) {
 		    printf("Calling %s... \n",operators[i]);
 		   
