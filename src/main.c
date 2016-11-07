@@ -1,11 +1,16 @@
 #include "gcode.h"
+#include <sys/time.h>
 
-#define VERSION "0.0.1"
+#define VERSION "alpha 0.0.1"
 
 int main(int argc, char **argv)
 {
     char *path_to_file;
     
+    /* Stopwatvh used to show progress time */
+    struct timeval start, stop;
+    int milsec;		/* Time in milliseconds */
+
     printf("Silvano's CNC - V. %s\n",VERSION);
 
     /* If path is not specified from cmd line */
@@ -36,7 +41,19 @@ int main(int argc, char **argv)
     printf("Valid file format.\n");
     printf("Begin.\n");
 
+    /* Starts stopwatch */
+    gettimeofday(&start, NULL);
+
     begin_print(f);
+    
+    /* Stops stopwatch */
+    gettimeofday(&stop, NULL);
+    
+    /* Calculates time in miliseconds */
+    milsec = (int) (1000 * (stop.tv_sec - start.tv_sec)
+	    + (stop.tv_usec - start.tv_usec) / 1000);
+    
+    printf("Printing complete after %d milliseconds!", milsec);
 
     return 0;
 }
