@@ -2,28 +2,26 @@
  * Detects user operating system
  * based on compilation flags
  */
-
 #if defined (__gnu_linux__)
 #define OS "GNU/Linux"
 
 #elif defined (__APPLE__)
-#define OS "OSx"
+#define OS "OSx (unsupported)"
 
 #elif defined (_WIN32)
-#define OS "Windows x86"
+#define OS "Windows x86 (unsupported)"
 
 #elif defined (_WIN64)
-#define OS "Windows x64"
+#define OS "Windows x64(unsupported)"
 
 #else
-#define OS "unknown OS"
+#define OS "unknown OS (unsupported)"
 
 #endif
 
 /*
  * Define g-code libraries
  */
-
 #ifndef __GCODE
 #define __GCODE
 
