@@ -12,7 +12,7 @@
 #define OS "Windows x86 (unsupported)"
 
 #elif defined (_WIN64)
-#define OS "Windows x64(unsupported)"
+#define OS "Windows x64 (unsupported)"
 
 #else
 #define OS "unknown OS (unsupported)"
