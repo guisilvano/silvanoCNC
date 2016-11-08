@@ -6,7 +6,7 @@ Very early code implementation for a DIY CNC machine. This isn't even doing anyt
 
 ``` shell
 ~$ git clone https://wwww.github.com/guisilvano/silvanoCNC
-~$ make
+~$ sudo make install
 ```
 
 Then:
