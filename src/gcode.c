@@ -23,6 +23,8 @@ size_t total_operators = sizeof(operators)/sizeof(operators[0]);
  */
 void check_instructions(FILE * f)
 {
+    int i;
+
     /* File buffer */
     char buffer[OPERATOR_LENGHT];
     int line = 1;
@@ -31,7 +33,7 @@ void check_instructions(FILE * f)
 	bool try = false;
 
 	/* Compares each line's first string to the operators */
-	for (int i=0;i<total_operators;i++) {
+	for (i=0;i<total_operators;i++) {
 	    if (strcmp(buffer, operators[i]) == 0) {
 		try = true;
 		line++;
@@ -74,6 +76,7 @@ void check_instructions(FILE * f)
  */
 void begin_print(FILE * f)
 {
+    int i;
     char op[16];
     
     /* Move header to beginning of file */
@@ -90,7 +93,7 @@ void begin_print(FILE * f)
 	    /* Not comment */
 	
 	    /* Identifies operation and calls its respective routine */
-	    for (int i=0;i<total_operators;i++) {
+	    for (i=0;i<total_operators;i++) {
 		if (strcmp(operators[i],op) == 0) {
 		    printf("Calling %s... \n",operators[i]);
 		   

@@ -1,6 +1,6 @@
 IDIR = ./include
 CC = gcc
-CFLAGS = -I$(IDIR)
+CFLAGS = -I $(IDIR) -ansi
 
 SDIR = ./src
 ODIR = ./src/obj
@@ -20,8 +20,11 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 $(ODIR)/%.o: $(SDIR)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-silvanoCNC: $(OBJ)
+silvano-cnc: $(OBJ)
 	gcc -o $@ $^ $(CFLAGS) $(LIBS)
+
+install:
+	sudo cp silvano-cnc /bin
 
 .PHONY: clean
 
