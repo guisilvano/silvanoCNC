@@ -15,6 +15,9 @@
 #elif defined (_WIN64)
 #define OS "Windows x64"
 
+#else
+#define OS "unknown OS"
+
 #endif
 
 /*
