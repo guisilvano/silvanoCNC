@@ -5,7 +5,7 @@
 
 #include "gcode.h"
 
-#define VERSION "alpha 0.0.1"
+#define VERSION "0.0.1 alpha"
 
 int main(int argc, char **argv)
 {
@@ -15,7 +15,7 @@ int main(int argc, char **argv)
     struct timeval start, stop;
     int milsec;		/* Time in milliseconds */
 
-    printf("Silvano's CNC - V. %s\n",VERSION);
+    printf("Silvano's CNC - V. %s for %s\n", VERSION, OS);
 
     /* If path is not specified from cmd line */
     /* TODO: use GNU's getopt to parse arguments */
