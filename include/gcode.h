@@ -1,6 +1,5 @@
 /*
- * Detects user operating system
- * based on compilation flags
+ * Detects user operating system based on compilation flags
  */
 #if defined (__gnu_linux__)
 #define OS "GNU/Linux"

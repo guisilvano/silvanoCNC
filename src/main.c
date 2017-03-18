@@ -49,7 +49,7 @@ int main(int argc, char **argv)
     gettimeofday(&start, NULL);
 
     begin_print(f);
-    
+
     /* Stops stopwatch */
     gettimeofday(&stop, NULL);
     

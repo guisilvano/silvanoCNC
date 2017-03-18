@@ -88,7 +88,7 @@ void begin_print(FILE * f)
 	    /* TODO: Is comment */
 	    fscanf(f,"%s%*[^\n]",op);
 	    
-	    printf("COMMENT");
+	    /* printf("COMMENT\n"); */
 	} else {
 	    /* Not comment */
 	
@@ -108,6 +108,8 @@ void begin_print(FILE * f)
 
 void begin_operation(FILE * f, char op[]) 
 {
+
+    /* My CNC machine is not ready yet, so I can't implement this for now =( */
 
     return;
 }
